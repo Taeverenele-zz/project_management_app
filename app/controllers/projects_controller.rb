@@ -1,7 +1,22 @@
 class ProjectsController < ApplicationController
-  
+  before_action :read_projects
+
   def index
     #show all of the resources
+  end
+  def new
+    #to have a form that allows you to create a new resource
+  end
+  def show
+    #show one of the resources
+    @project = @projects.find do |project|
+      project[:id] == params[:id].to_i
+    end
+  end
+
+  private
+
+  def read_projects
     @projects = [
       {
         id: 1,
@@ -16,12 +31,6 @@ class ProjectsController < ApplicationController
         date_completed: '20/10/2020'
       }
     ]
-  end
-  def new
-    #to have a form that allows you to create a new resource
-  end
-  def show
-    #show one of the resources
   end
   # def create
   # end

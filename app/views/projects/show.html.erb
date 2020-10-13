@@ -1,1 +1,15 @@
-<h1>On show page</h1>
+<h1>Project</h1>
+
+<ul>
+  <li>
+    <%= link_to @project[:name], project_path(@project[:id]) %>
+    <ul>
+      <li>
+        github status: <%= @project[:github_status] ? "👍" : "👎" %>
+      </li>
+      <li>
+        data completed: <%= @project[:date_completed] %>
+      </li>
+    </ul>
+  </li>
+</ul>

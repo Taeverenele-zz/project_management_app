@@ -1,3 +1,19 @@
-<h1>On index page</h1>
+<h1>Projects</h1>
+<h2>Projects list</h2>
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <%= link_to project[:name], project_path(project[:id]) %>
+      <ul>
+        <li>
+          github status: <%= project[:github_status] ? "👍" : "👎" %>
+        </li>
+        <li>
+          data completed: <%= project[:date_completed] %>
+        </li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
 
 <%= @projects %>
