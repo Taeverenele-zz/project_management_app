@@ -2,6 +2,20 @@ class ProjectsController < ApplicationController
   
   def index
     #show all of the resources
+    @projects = [
+      {
+        id: 1,
+        name: 'terminal app',
+        github_status: true,
+        date_completed: '17/08/2020'
+      },
+      {
+        id: 2,
+        name: 'react app',
+        github_status: false,
+        date_completed: '20/10/2020'
+      }
+    ]
   end
   def new
     #to have a form that allows you to create a new resource
